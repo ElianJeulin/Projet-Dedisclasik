@@ -1,0 +1,1 @@
+INSERT INTO ABONNÉS VALUES (1,'Dedisclasik', 'Georges', 'admin', '123')

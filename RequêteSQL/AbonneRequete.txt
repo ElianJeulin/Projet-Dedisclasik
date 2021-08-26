@@ -1,0 +1,20 @@
+US1) 	INSERT INTO ABONNÉS VALUES ('Code Pays', 'Nom', 'Prenom', 'login', 'password')
+				
+
+(Rentrer des valeurs que l'on demande à l'utilisateur dans les VALUES)
+
+
+US2) 	SELECT TITRE_ALBUM FROM ALBUMS
+	INNER JOIN EMPRUNTER ON ALBUMS.CODE_ALBUM = EMPRUNTER.CODE_ALBUM
+	INNER JOIN ABONNÉS ON ABONNÉS.CODE_ABONNÉ = EMPRUNTER.CODE_ABONNÉ
+	WHERE ABONNÉS.CODE_ABONNÉ = ?
+
+(Rentrer dans le where le Code Abonné de l'abonné en question)
+
+
+US3) 	@Date = 
+	SELECT DATE_RETOUR_ATTENDUE FROM EMPRUNTER
+	INNER JOIN ABONNÉS ON ABONNÉS.CODE_ABONNÉ = EMPRUNTER.CODE_ABONNÉ
+	WHERE ABONNÉS.CODE_ABONNÉ = ?
+
+	SELECT DATEADD(MM , 1, @Date)
